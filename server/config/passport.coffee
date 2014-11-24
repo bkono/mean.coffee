@@ -6,13 +6,14 @@ module.exports = (passport) ->
 
   passport.use new BasicStrategy ({}), (username, password, done) ->
     User.findOne { username: username }, (err, user) ->
-      if err then return done(err)
+      return done(err) if err
       if not user then return done(null, false)
       if not user.authenticate(password) then return done(null, false)
       return done(null, user)
 
   passport.serializeUser (user, done) ->
-    done(null, user)
+    done(null, user.id)
 
-  passport.deserializeUser (user, done) ->
-    done(null, user)
+  passport.deserializeUser (id, done) ->
+    User.findById id, (err, user) ->
+      done(err, user)
