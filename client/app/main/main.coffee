@@ -7,3 +7,4 @@ meanApp.config ($stateProvider) ->
 
 meanApp.controller 'MainCtrl', ($scope, Global) ->
   $scope.global = Global
+  $scope.testArray = ['apple', 'banana', 'cherry']
