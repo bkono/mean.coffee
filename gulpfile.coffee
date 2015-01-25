@@ -39,7 +39,7 @@ gulp.task 'test', (done) ->
   karma.start
     configFile: __dirname + '/karma.conf.js'
     #singleRun: true
-  , done
+    , done
 
 gulp.task 'scripts', tasks.scripts = () ->
   coffeestream = coffee({bare: true})

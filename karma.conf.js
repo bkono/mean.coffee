@@ -15,6 +15,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'client/components/angular/angular.js',
+      'client/components/angular-bootstrap/ui-bootstrap.js',
+      'client/components/angular-cookies/angular-cookies.js',
+      'client/components/angular-mocks/angular-mocks.js',
+      'client/components/angular-resource/angular-resource.js',
+      'client/components/angular-ui-router/release/angular-ui-router.js',
+      'client/components/angular-ui-utils/ui-utils.js',
+      'client/components/jquery/dist/jquery.js',
+      'client/components/bootstrap/dist/js/bootstrap.js',
+      'www/js/app.js',
       'client/test/**.coffee'
     ],
 
@@ -47,7 +57,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_ERROR,
 
 
     // enable / disable watching file and executing tests whenever any file changes
